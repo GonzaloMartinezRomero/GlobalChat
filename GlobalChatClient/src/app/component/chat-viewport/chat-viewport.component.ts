@@ -22,7 +22,6 @@ export class ChatViewportComponent implements OnInit {
 
     this.chatManager.startChatService().then(_ => {
 
-      console.log('Connection success!');
       this.chatManager.onMessageReceived(this,this.receiveMessage);
 
     }).catch(error => {

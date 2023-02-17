@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HubConnection } from '@microsoft/signalr';
 import { HubConnectionBuilder } from '@microsoft/signalr/dist/esm/HubConnectionBuilder';
+import { environment } from '../environments/environment';
 import { ChatMessage } from '../model/chatmessage.model';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ChatManagerService{
 
   constructor() { 
 
-    this.connection = new HubConnectionBuilder().withUrl('https://localhost:5000/globalChat')
+    this.connection = new HubConnectionBuilder().withUrl(environment.urlChatServer)
                                                 .build();
   }
 
